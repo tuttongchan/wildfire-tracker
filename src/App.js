@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Map from './components/Map';
 import Loader from './components/Loader';
-import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const [eventData, setEventData] = useState([]);
@@ -26,8 +26,10 @@ function App() {
 
   return (
     <div>
-      <Header />
-      {!loading ? <Map eventData={eventData} /> : <Loader />}
+      <div className="container">
+        <Sidebar />
+        {!loading ? <Map eventData={eventData} /> : <Loader />}
+      </div>
     </div>
   );
 }
